@@ -82,6 +82,22 @@ The installed UDL will be invoked automatically when opening files with a ".dsb"
 1. Go to `Language`, then click the installed language name near the bottom, e.g. `DSB` or `DSB-Solarized`.
 
 
+Screenshots
+-----------
+Click to view full size.  For those interested, the font used is [DejaVu Sans Mono](http://dejavu-fonts.org/). 
+
+###Baseline
+[![no theme](https://github.com/kerryshireman/dsbasic-npp-udl/raw/master/img/dsb-base-thumb.png)](https://github.com/kerryshireman/dsbasic-npp-udl/raw/master/img/dsb-base.png)
+
+### DSB
+[![DSB](https://github.com/kerryshireman/dsbasic-npp-udl/raw/master/img/dsb-highlighted-thumb.png)](https://github.com/kerryshireman/dsbasic-npp-udl/raw/master/img/dsb-highlighted.png)
+
+### DSB-Solarized
+[![DSB Solarized](https://github.com/kerryshireman/dsbasic-npp-udl/raw/master/img/dsb-solarized-thumb.png)](https://github.com/kerryshireman/dsbasic-npp-udl/raw/master/img/dsb-solarized.png)
+
+### DSB-Solarized-l
+[![DSB Solarized Light](https://github.com/kerryshireman/dsbasic-npp-udl/raw/master/img/dsb-solarized-l-thumb.png)](https://github.com/kerryshireman/dsbasic-npp-udl/raw/master/img/dsb-solarized-l.png)
+
 Changing Themes
 ---------------
 Notepad++ may become confused when two or more UDLs are associated with the same file extension.  If you already installed one of these UDLs and want to switch it out, follow these uninstallation steps **before** proceeding:
