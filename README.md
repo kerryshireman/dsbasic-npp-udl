@@ -43,27 +43,26 @@ Installation
 
 **All Installations**
 
-1. Download this repository to your local filesystem, unarchive if necessary
+1. [Download][thisrepo] this repository and extract
 2. In Notepad++, go to `Language | Define Your Language...`
 3. Go to `Import...`, navigate to the appropriate UDL file (e.g. DSB.xml), click `Open`
-4. Click the `X` button at top right, closing the dialog window
+4. Click the top right `X` button, closing the dialog window
 
 **Solarized Installations**
 
-Another step is required to get the right background color for Solarized installations.
+Another step is required to set the background color for Solarized installations.
 
 1. Go to `Setting | Style Configurator...`
 2. Under `Language :` ensure that `Global Styles` is selected 
 3. Under `Style :` ensure that `Global override` is selected 
 4. Check the `Enable global background color` checkbox
 4. Using the `Select theme` drop down, choose the appropriate theme (see table below for help):
-5. Click `Save &amp; Close`
+5. Click `Save & Close`
 
 <table>
-<caption>UDL to Theme</caption>
 <tr>
-<th>UDL</th>
-<th>Theme</th>
+<th>UDL File</th>
+<th>N++ Theme</th>
 </tr>
 <tr>
 <td>DSB-Solarized.xml</td>
@@ -118,6 +117,7 @@ Thanks go to my colleague, Joy Stover, who encouraged me to get off my behind an
 [npp63]: http://notepad-plus-plus.org/download/v6.3.html
 [npp]: http://notepad-plus-plus.org/
 [udl2]: http://udl20.weebly.com/
-[kerry]: https://github.com/haylo75
+[kerry]: https://github.com/kerryshireman
+[thisrepo]: https://github.com/kerryshireman/dsbasic-npp-udl/archive/master.zip
 [basicref]: http://publibfp.boulder.ibm.com/epubs/pdf/c1898972.pdf
 [serverref]: http://publibfp.boulder.ibm.com/epubs/pdf/c1898983.pdf
