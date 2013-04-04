@@ -16,7 +16,7 @@ Status - Statement context gets a file status. Function context gets a status co
 Terminfo - Function and Constant conflict.  Function takes precedence.
 
 
-* Arithmetic, Assignement and String Operators - Operators & Delimiters -> Operators1
+**** Arithmetic, Assignement and String Operators - Operators & Delimiters -> Operators1
 a = b - c
 a = b + c
 a = b ^ c
@@ -27,7 +27,7 @@ a := b
 a = b[1,4]
 
 
-* Relational Operators - Operators & Delimiters -> Operators1 & Operators2
+**** Relational Operators - Operators & Delimiters -> Operators1 & Operators2
 If a = b Then c
 If a > b Then c
 If a < b Then c
@@ -45,7 +45,7 @@ If a LE b Then c
 If a GE b Then c 
 
 
- * Comments - Comment & Number -> Comment line style & Comment style
+**** Comments - Comment & Number -> Comment line style & Comment style
 * I am obviously a comment.
 ! Pay attention to this comment!
 $* I just want to be a different kind of comment
@@ -53,541 +53,621 @@ a = b - 3 ;* I am an inline comment behind some code.
 REM I am a remarkable comment. Notice I am not the same format. This is due to a naming collision
 
 
-* BASIC statements - Keyword Lists -> 3rd group
-Abort
-Authorization
-Auxmap
-Before ;* Related to Ins
-Begin
-Break
-Bscan
-Call
-Calling ;* Related to Deffun
-Case
-Chain
-Clear
-Cleardata
-Clearfile
-Clearprompts
-Clearselect
-Close
-Closeseq
-Com
-Commit
-Common
-Continue
-Convert ;* Takes precedence over function of the same name
-Create
-Crt32 ;* Listed as a function but syntax is that of a statement, plus doc verbiage refers to it as a statement
-Data
-Debug
-Deffun
-Del
-Delete
-Deletelist
-Deleteu
-Dict ;* Related to Open
-Dim
-Dimension
-Display
-Do
-Echo
-Else
-End
-Enter
-Equ
-Equate
-Errmsg
-Error
-Execute
-Exit
-Filelock
-Fileunlock
-Find
-Findstr
-Flush
-Footing
-Formlist
-From
-Function
-Get
-Get(arg.)
-Getlist
-Go
-Gosub
-Goto
-Groupstore
-Heading
-Headinge
-Headingn
-Hush
-If
-Include
-Input
-Inputclear
-Inputdisp
-Inputdp
-Inputerr
-Inputif
-Inputnull
-Inputtrap
-Ins
-Isolation
-Keyedit
-Keyexit
-Keytrap
-Let
-Level
-Locate
-Lock
-Locked ;* Related to Filelock
-Lptr ;* Related to Ttyset
-Mat
-Matbuild
-Match
-Matches
-Matparse
-Matread
-Matreadl
-Matreadu
-Matwrite
-Matwriteu
-Mtu ;* Related to Ttyset
-Nap
-Next
-Nobuf
-Null
-Off
-On
-Open
-Opencheck
-Opendev
-Openpath
-Openseq
-Page
-Perform
-Precision
-Print
-Printer
-Printerr
-Procread
-Procwrite
-Prog
-Program
-Prompt
-Read
-Readblk
-Readl
-Readlist
-Readnext
-Readseq
-Readt
-Readu
-Readv
-Readvl
-Readvu
-Recordlock
-Recordlocku
-Recordlockl
-Release
-Repeat
-Reset
-Return
-Return; ;* Doubles as a function. This context is used far more in our control code, which was the original purpose for syntax highlighting.
-Returning ;* Related to Get
-Revremove
-Rewind
-Rollback
-Seek
-Seek(arg.)
-Select
-Selecte
-Selectindex
-Send
-Set
-Setrem
-Setting ;* Related to Find, Findstr, Get, maybe others
-Sleep
-Sselect
-Sselectn
-Sselectv
-Status ;* Ignored due to ubiquitous use of this word as a variable throughout Job Control
-Start
-Step
-Stop
-Stope
-Stopm
-Storage
-Sub
-Subroutine
-Tabstop
-Then
-Timeout
-To
-Tprint
-Transaction
-Ttyctl
-Ttyget
-Ttyset
-Unit ;* Related to Readt, Rewind, Weof, perhaps others. Has the syntax of a function. Since it's subordinate to a statement, I am leaving it here.
-Unlock
-Uprint
-Using ;* Related to Groupstore
-Waiting ;* Related to Get, maybe others
-Weof
-Weofseq
-While
-Work ;* Related to Commit and Rollback.
-Write
-Writeblk
-Writelist
-Writeseq
-Writeseqf
-Writet
-Writeu
-Writev
-Writevu
-
-
-* BASIC functions - Keyword Lists -> 2nd group
-Abs()
-Abss()
-Acos()
-Adds()
-Alpha()
-Ands()
-Ascii()
-Asin()
-Assigned()
-Atan()
-Bitand()
-Bitnot()
-Bitor()
-Bitreset()
-Bitset()
-Bittest()
-Bitxor()
-Byte()
-Bytelen()
-Bytetype()
-Byteval()
-Cats()
-Change()
-Char()
-Chars()
-Checksum()
-Col1()
-Col2()
-Compare()
-Convert() ;* Statement takes precedence
-Cos()
-Cosh()
-Count()
-Counts()
-Crc32()
-Date()
-Dcflush()
-Dcount()
-Delete() ;* Statement takes precedence
-Div()
-Divs()
-Downcase()
-Dquote()
-Dtx()
-Ebcdic()
-Eof(Arg.) ;* Not working due to lack of escaping functionality in UDL2
-Eqs()
-Ereplace()
-Exchange()
-Exp()
-Extract()
-Fadd()
-Fdiv()
-Ffix()
-Fflt()
-Field()
-Fields()
-Fieldstore()
-Fileinfo()
-Fix()
-Fmt()
-Fmtdp()
-Fmts()
-Fmtsdp()
-Fmul()
-Fold()
-Folddp()
-Fsub()
-Ges()
-Get() ;* Statement takes precedence
-Getlocale()
-Getrem()
-Group()
-Gts()
-Icheck()
-Iconv()
-Iconvs()
-Ifs()
-Ilprompt()
-Index()
-Indexs()
-Indices()
-Inmat()
-Insert()
-Int()
-Isnull()
-Isnulls()
-Itype()
-Keyin()
-Left()
-Len()
-Lendp()
-Lens()
-Lensdp()
-Les()
-Ln()
-Localeinfo()
-Lower()
-Lts()
-Matchfield()
-Maximum()
-Minimum()
-Mod()
-Mods()
-Muls()
-Neg()
-Negs()
-Nes()
-Not()
-Nots()
-Num()
-Nums()
-Oconv()
-Oconvs()
-Ors()
-Pwr()
-Quote()
-Raise()
-Randomize ;* Listed as a statement, but has the syntax of a function
-Real()
-Recordlocked()
-Rem()
-Remove()
-Replace()
-Reuse()
-Right()
-Rnd()
-Rpc.call()
-Rpc.connect()
-Rpc.disconnect()
-Sadd()
-Scmp()
-Sdiv()
-Selectinfo()
-Sentence()
-Seq()
-Seqs()
-Setlocale()
-Sin()
-Sinh()
-Smul()
-Soundex()
-Space()
-Spaces()
-Splice()
-Sqrt()
-Squote()
-Ssub()
-Status() ;* Ignored
-Str() ;* Docs conflict in referring to Str as a statement vs. function.  Its syntax is that of a function.
-Strs()
-Subr()
-Subs()
-Substrings()
-Sum()
-Summation()
-System()
-Tan()
-Tanh()
-Terminfo()
-Time()
-Timedate()
-Tparm()
-Trans()
-Trim()
-Trimb()
-Trimbs()
-Trimf()
-Trimfs()
-Trims()
-Unassigned()
-Unichar()
-Unichars()
-Uniseq()
-Uniseqs()
-Upcase()
-Xlate()
-Xtd()
-
-
-* Job Control Functions - Keyword Lists -> 2nd group
-
-* Macros from Job Control header file. These are called from a job, and refer to the current job instance.
-* If the job has Parameters with these names defined, they take priority over the macros
-** Job Scope
-DSTCPPort()
-DSInstallTag()
-DSHostName()
-DSProjectName()
-DSProjectDirectory()
-DSUserStatus()
-DSJobController()
-DSJobName()
-DSJobInvocationId()
-DSJobStartTimestamp()
-DSJobStartDate()
-DSJobStartTime()
-DSJobStatus()
-DSJobInterimStatus()
-DSJobWaveNo()
-DSJobPid()
-DSJobControl()
-** Stage Scope
-DSStageInRowNum()
-DSStageLastErr()
-DSStageName()
-DSStageType()
-DSStageVarList()
-** Link Scope
-DSLinkLastErr()
-DSLinkName()
-DSLinkRowCount()
-** RTI/EOT Scope
-DSRTIRequestNo()
-DSRTIRowCount()
-
-
-* BASIC Subroutines - Keyword Lists -> 2nd group
-Call !ASYNC() sadpfoijsadf
-Call !EDIT.INPUT()
-Call !ERRNO()
-Call !FCMP()
-Call !GET.KEY()
-Call !GET.PARTNUM()
-Call !GET.PATHNAME()
-Call !GET.USER.COUNTS()
-Call !GETPU()
-Call !INLINE.PROMPTS()
-Call !INTS()
-Call !MAKE.PATHNAME()
-Call !MATCHES()
-Call !MESSAGE()
-Call !PACK.FNKEYS()
-Call !REPORT.ERROR()
-Call !SET.PTR()
-Call !SETPU()
-Call !TIMDAT()
-Call !USER.TYPE()
-Call !VOC.PATHNAME()
-
-
-* Global Statements - Keyword Lists -> 1st group
-abort ;* Conflicts with Abort statement
-#INCLUDE ;* Conflicts with regular include statement
-$CHAIN something
-$COPYRIGHT "Initech, Inc."
-$DEFINE symbol "replacement"
+**** Keyword Lists -> 1st group
+**Special-Statements**
+$CHAIN
+$COPYRIGHT
+$DEFINE
 $EJECT
-$IFDEF Something
-	a = b
 $ELSE
-	a = c
 $ENDIF
+$IFDEF
 $IFNDEF
 $INCLUDE
 $INSERT
 $MAP
 $PAGE
 $UNDEFINE
+$OPTIONS
+**Option**
+**BASIC-Reference-Page-60**
+$OPTIONS
 
 
-* $OPTIONS and its subordinate keywords - Keyword Lists -> 1st group & 8th group
-$OPTIONS 
-$OPTIONS COMP.PRECISION
-$OPTIONS COUNT.OVLP
-$OPTIONS END.WARN
-$OPTIONS EXEC.EQ.PERF
-$OPTIONS EXTRA.DELIM
-$OPTIONS FOR.INCR.BEF
-$OPTIONS FORMAT.OCONV
-$OPTIONS FSELECT
-$OPTIONS HEADER.BRK
-$OPTIONS HEADER.DATE
-$OPTIONS HEADER.EJECT
-$OPTIONS IN2.SUBSTR
-$OPTIONS INFO.ABORT
-$OPTIONS INFO.CONVERT
-$OPTIONS INFO.ENTER
-$OPTIONS INFO.LOCATE
-$OPTIONS INFO.MARKS
-$OPTIONS INFO.MOD
-$OPTIONS INPUTAT
-$OPTIONS INPUT.ELSE
-$OPTIONS INT.PRECISION
-$OPTIONS LOCATE.R83
-$OPTIONS NO.CASE
-$OPTIONS NO.RESELECT
-$OPTIONS NO.SMA.COMMON
-$OPTIONS ONGO.RANGE
-$OPTIONS PCLOSE.ALL
-$OPTIONS PERF.EQ.EXEC
-$OPTIONS PIOPEN.INCLUDE
-$OPTIONS PIOPEN.MATREAD
-$OPTIONS PIOPEN.SELIDX
-$OPTIONS RADIANS
-$OPTIONS RAW.OUTPUT
-$OPTIONS READ.RETAIN
-$OPTIONS REAL.SUBSTR
-$OPTIONS RNEXT.EXPL
-$OPTIONS SEQ.255
-$OPTIONS STATIC.DIM
-$OPTIONS STOP.MSG
-$OPTIONS SUPP.DATA.ECHO
-$OPTIONS ULT.FORMAT
-$OPTIONS USE.ERRMSG
-$OPTIONS VAR.SELECT
-$OPTIONS VEC.MATH
-$OPTIONS WIDE.IF
+**** Keyword Lists - 2nd group
+**Job-Control-Functions**
+**BASIC-Reference-Page-177**
+DSAttachJob
+DSCheckRoutine
+DSDetachJob
+DSExecute
+DSGetCustInfo
+DSGetJobInfo
+DSGetJobMetaBag
+DSGetLinkInfo
+DSGetLinkMetaData
+DSGetLogEntry
+DSGetLogEventIds
+DSGetLogSummary
+DSGetNewestLogId
+DSGetParamInfo
+DSGetProjectInfo
+DSGetStageInfo
+DSGetStageLinks
+DSGetStagesOfType
+DSGetStagesTypes
+DSGetVarInfo
+DSGetVersionInfo
+DSIPCPageProps
+DSLogEvent
+DSLogFatal
+DSLogInfo
+DSLogToController
+DSLogWarn
+DSMakeJobReport
+DSMakeMsg
+DSPrepareJob
+DSRunJob
+DSSendMail
+DSSetDisableJobHandler
+DSSetDisableProjectHandler
+DSSetGenerateOpMetaData
+DSSetJobLimit
+DSSetParam
+DSSetUserStatus
+DSStopJob
+DSTransformError
+DSTranslateCode
+DSWaitForFile
+DSWaitForJob
+
+**JOBCONTROL.H-Functions**
+**AFAIK-Undocumented-In-BASIC-Reference**
+DSGetIdForJob
+DSJobNameFromJobId
+DSGetVar
+DSSetTraceOptions
+DSSetNotify
+DSSetVar
+DSSocketWait
+DSSocketNotify
+**JOBCONTROL.H-Macros**
+DSTCPPort
+DSInstallTag
+DSHostName
+DSProjectName
+DSProjectDirectory
+DSUserStatus
+DSJobController
+DSJobName
+DSJobInvocationId
+DSJobStartTimestamp
+DSJobStartDate
+DSJobStartTime
+DSJobStatus
+DSJobInterimStatus
+DSJobWaveNo
+DSJobPid
+DSJobControl
+DSStageInRowNum
+DSStageLastErr
+DSStageName
+DSStageType
+DSStageVarList
+DSLinkLastErr
+DSLinkName
+DSLinkRowCount
+DSRTIRequestNo
+DSRTIRowCount
+
+**Subroutines**
+**BASIC-Reference-Page-451**
+**Call-prefix-needed-for-highlight**
+!ASYNC
+!EDIT.INPUT
+!ERRNO
+!FCMP
+!GET.KEY
+!GET.PARTNUM
+!GET.PATHNAME
+!GET.USER.COUNTS
+!GETPU
+!INLINE.PROMPTS
+!INTS
+!MAKE.PATHNAME
+!MATCHES
+!MESSAGE
+!PACK.FNKEYS
+!REPORT.ERROR
+!SET.PTR
+!SETPU
+!TIMDAT
+!USER.TYPE
+!VOC.PATHNAME
+
+**Functions**
+**BASIC-Reference-Page-52**
+ABS
+ABSS
+ACOS
+ADDS
+ALPHA
+ANDS
+ASCII
+ASIN
+ASSIGNED
+ATAN
+BITAND
+BITNOT
+BITOR
+BITRESET
+BITSET
+BITTEST
+BITXOR
+BYTE
+BYTELEN
+BYTETYPE
+BYTEVAL
+CATS
+CHANGE
+CHAR
+CHARS
+CHECKSUM
+COL1
+COL2
+COMPARE
+**CONVERT-Statement
+COS
+COSH
+COUNT
+COUNTS
+CRC32
+DATE
+DCFLUSH
+DCOUNT
+**DELETE-Statement
+DIV
+DIVS
+DOWNCASE
+DQUOTE
+DTX
+EBCDIC
+EOF(ARG.)
+EQS
+EREPLACE
+EXCHANGE
+EXP
+EXTRACT
+FADD
+FDIV
+FFIX
+FFLT
+FIELD
+FIELDS
+FIELDSTORE
+FILEINFO
+FIX
+FMT
+FMTDP
+FMTS
+FMTSDP
+FMUL
+FOLD
+FOLDDP
+FSUB
+GES
+GETLOCALE
+GETREM
+GROUP
+GTS
+ICHECK
+ICONV
+ICONVS
+IFS
+ILPROMPT
+INDEX
+INDEXS
+INDICES
+INMAT
+INSERT
+INT
+ISNULL
+ISNULLS
+ITYPE
+KEYIN
+LEFT
+LEN
+LENDP
+LENS
+LENSDP
+LES
+LN
+LOCALEINFO
+LOWER
+LTS
+MATCHFIELD
+MAXIMUM
+MINIMUM
+MOD
+MODS
+MULS
+NEG
+NEGS
+NES
+NOT
+NOTS
+NUM
+NUMS
+OCONV
+OCONVS
+ORS
+PWR
+QUOTE
+RAISE
+RANDOMIZE
+REAL
+RECORDLOCKED
+REM
+REMOVE
+REPLACE
+REUSE
+RIGHT
+RND
+RPC.CALL
+RPC.CONNECT
+RPC.DISCONNECT
+SADD
+SCMP
+SDIV
+SELECTINFO
+SENTENCE
+SEQ
+SEQS
+SETLOCALE
+SIN
+SINH
+SMUL
+SOUNDEX
+SPACE
+SPACES
+SPLICE
+SQRT
+SQUOTE
+SSUB
+**STATUS-Ignored
+STR
+STRS
+SUBR
+SUBS
+SUBSTRINGS
+SUM
+SUMMATION
+SYSTEM
+TAN
+TANH
+TERMINFO
+TIME
+TIMEDATE
+TPARM
+TRANS
+TRIM
+TRIMB
+TRIMBS
+TRIMF
+TRIMFS
+TRIMS
+UNASSIGNED
+UNICHAR
+UNICHARS
+UNISEQ
+UNISEQS
+UPCASE
+XLATE
+XTD
 
 
-* System Constants / Mnemonics / Tokens - Keywords Lists -> 8th group
-RECORDLOCKED.INS.IBAS
+**** Keyword Lists - 3rd group
+**Statements**
+**BASIC-Reference-Page-177**
+ABORT
+AND
+AUTHORIZATION
+AUXMAP
+BEFORE
+BEGIN
+BREAK
+BSCAN
+CASE
+CALL
+CALLING
+CHAIN
+CLEAR
+CLEARDATA
+CLEARFILE
+CLEARPROMPTS
+CLEARSELECT
+CLOSE
+CLOSESEQ
+COM
+COMMIT
+COMMON
+CONTINUE
+CONVERT
+CREATE
+CRT32
+DATA
+DEBUG
+DEFFUN
+DEL
+DELETE
+DELETELIST
+DELETEU
+DICT
+DIM
+DIMENSION
+DISPLAY
+DO
+ECHO
+EOF
+ELSE
+END
+ENTER
+EQU
+EQUATE
+ERRMSG
+ERROR
+EXECUTE
+EXIT
+FILELOCK
+FILEUNLOCK
+FIND
+FINDSTR
+FLUSH
+FOOTING
+FOR
+FORMLIST
+FROM
+FUNCTION
+GET
+GETLIST
+GETX
+GO
+GOSUB
+GOTO
+GROUPSTORE
+HEADING
+HEADINGE
+HEADINGN
+HUSH
+IF
+IN
+INCLUDE
+INPUT
+INPUTCLEAR
+INPUTDISP
+INPUTDP
+INPUTERR
+INPUTIF
+INPUTNULL
+INPUTTRAP
+INS
+ISOLATION
+KEYEDIT
+KEYEXIT
+KEYTRAP
+LET
+LEVEL
+LOCATE
+LOCK
+LOCKED
+LPTR
+LOOP
+MAT
+MATBUILD
+MATCH
+MATCHES
+MATPARSE
+MATREAD
+MATREADL
+MATREADU
+MATWRITE
+MATWRITEU
+MTU
+NAP
+NEXT
+NOBUF
+NULL
+OFF
+ON
+OPEN
+OPENCHECK
+OPENDEV
+OPENPATH
+OPENSEQ
+OR
+PAGE
+PERFORM
+PRECISION
+PRINT
+PRINTER
+PRINTERR
+PROCREAD
+PROCWRITE
+PROG
+PROGRAM
+PROMPT
+READ
+READBLK
+READL
+READLIST
+READNEXT
+READSEQ
+READT
+READU
+READV
+READVL
+READVU
+RECORDLOCK
+RECORDLOCKU
+RECORDLOCKL
+RELEASE
+REPEAT
+RESET
+RETURN
+RETURN;
+RETURNING
+REVREMOVE
+REWIND
+ROLLBACK
+SEEK
+SELECT
+SELECTE
+SELECTINDEX
+SEND
+SET
+SETREM
+SETTING
+SLEEP
+SSELECT
+SSELECTN
+SSELECTV
+START
+STEP
+STOP
+STOPE
+STOPM
+STORAGE
+SUB
+SUBROUTINE
+TABSTOP
+THEN
+TIMEOUT
+TO
+TPRINT
+TRANSACTION
+TTYCTL
+TTYGET
+TTYSET
+UNIT
+UNLOCK
+UNTIL
+UPRINT
+USING
+WAITING
+WEOF
+WEOFSEQ
+WHILE
+WORK
+WRITE
+WRITEBLK
+WRITELIST
+WRITESEQ
+WRITESEQF
+WRITET
+WRITEU
+WRITEV
+WRITEVU
+
+
+**Reserved-Future-Use**
+**** Keyword Lists - 4th group
+**** Keyword Lists - 5th group
+**** Keyword Lists - 6th group
+
+
+**** Keyword Lists - 7th group
+**Action-Markers**
+TODO:
+FIXME:
+BUG:
+
+
+**** Keyword Lists - 8th group
+**Constants-And-System-Tokens**
+DSINCLUDE
+DSR_UVCONST.H
+DSR_COMCONST.H
+SYSCOM
+UNIVERSE.INCLUDE
+
+
+**Options-Keywords**
+**BASIC-Reference-Page-61**
+COMP.PRECISION
+COUNT.OVLP
+END.WARN
+EXEC.EQ.PERF
+EXTRA.DELIM
+FOR.INCR.BEF
+FORMAT.OCONV
+FSELECT
+HEADER.BRK
+HEADER.DATE
+HEADER.EJECT
+IN2.SUBSTR
+INFO.ABORT
+INFO.CONVERT
+INFO.ENTER
+INFO.LOCATE
+INFO.MARKS
+INFO.MOD
+INPUTAT
+INPUT.ELSE
+INT.PRECISION
+LOCATE.R83
+NO.CASE
+NO.RESELECT
+NO.SMA.COMMON
+ONGO.RANGE
+PCLOSE.ALL
+PERF.EQ.EXEC
+PIOPEN.INCLUDE
+PIOPEN.MATREAD
+PIOPEN.SELIDX
+RADIANS
+RAW.OUTPUT
+READ.RETAIN
+REAL.SUBSTR
+RNEXT.EXPL
+SEQ.255
+STATIC.DIM
+STOP.MSG
+SUPP.DATA.ECHO
+ULT.FORMAT
+USE.ERRMSG
+VAR.SELECT
+VEC.MATH
+WIDE.IF
+
+**$DSHOME/DSEngine/INCLUDE/INFO_KEYS.H**
+INFO_KEYS.H
+INFO_KEYS.INS.IBAS
+IK$DATA
+IK$DICT
+IK$PRIMOS
+IK$SYSV
+IK$MSGACCEPT
+IK$MSGDEFER
+IK$MSGREJECT
+IK$MSGSEND
+IK$MSGSENDNOW
+IK$MSGSTATUS
 IK$SLACTIVE
 IK$SLCOUNT
+
+**$DSHOME/DSEngine/INCLUDE/RECORDLOCKED.INS.IBAS**
+RECORDLOCKED.H
+RECORDLOCKED.INS.IBAS
 LOCK$MY.FILELOCK
-LOCK$MY.READL
 LOCK$MY.READU
+LOCK$MY.READL
 LOCK$NO.LOCK
 LOCK$OTHER.READL
 LOCK$OTHER.READU
 LOCK$OTHER.FILELOCK
-UVLC$TIME
-UVLC$NUMERIC
-UVLC$MONETARY
-UVLC$CTYPE
-UVLC$COLLATE
 
-
-* Transaction isolation levels - Keywords Lists -> 8th group
-NO.ISOLATION
-READ.UNCOMMITTED
-READ.COMMITTED
-REPEATABLE.READ
-SERIALIZABLE
-
-
-* Terminal control constants - Keywords Lists -> 8th group
-TERMINFO ;* Conflicts with eponymous function
+**$DSHOME/DSEngine/INCLUDE/TERMINFO**
+TERMINFO
 TERMINAL.NAME
 COLUMNS
 LINES
@@ -1193,8 +1273,8 @@ LABEL.KEY.FUNCTION.61
 LABEL.KEY.FUNCTION.62
 LABEL.KEY.FUNCTION.63
 
-
-* TTY Constants - Keywords Lists -> 8th group
+**$DSHOME/DSEngine/INCLUDE/TTY**
+TTY
 MODE.TYPE
 MODE$LINE
 MODE$RAW
@@ -1276,8 +1356,7 @@ SIGNALS.ENABLE
 SIGNALS.FLUSH
 SIGNALS.BRKKEY
 
-
-* UVNL Header file constants - Keywords Lists -> 8th group
+**$DSHOME/DSEngine/INCLUDE/UVNLSLOC.H**
 UVNLSLOC.H
 UVLC$INDEX
 UVLC$TIME
@@ -1379,15 +1458,14 @@ LCE$HK.INFN.NOTF
 LCE$HK.NO.MAPN
 LCE$HK.MAPN.UNKN
 
-
-* Job Control Tokens - Keywords Lists -> 8th group
+**JOBCONTROL.H**
 JOBCONTROL.H
 DSJ.ME
---DSAttachJob-ErrorMode-Tokens--
+**DSAttachJob-ErrorMode-Tokens**
 DSJ.ERRFATAL
 DSJ.ERRWARN
 DSJ.ERRNONE
---DSGetJobInfo-InfoType-Tokens--
+**DSGetJobInfo-InfoType-Tokens**
 DSJ.JOBSTATUS
 DSJ.JOBNAME
 DSJ.JOBCONTROLLER
@@ -1414,7 +1492,7 @@ DSJ.JOBMULTIINVOKABLE
 DSJ.JOBFULLDESC
 DSJ.FULLSTAGELIST
 DSJ.JOBRESTARTABLE
---DSGetJobInfo-JOBSTATUS-Tokens--
+**DSGetJobInfo-JOBSTATUS-Tokens**
 DSJS.RUNNING
 DSJS.RUNOK
 DSJS.RUNWARN
@@ -1428,7 +1506,7 @@ DSJS.CRASHED
 DSJS.STOPPED
 DSJS.NOTRUNNABLE
 DSJS.NOTRUNNING
---DSGetLinkInfo-InfoType-Tokens--
+**DSGetLinkInfo-InfoType-Tokens**
 DSJ.LINKLASTERR
 DSJ.LINKNAME
 DSJ.LINKROWCOUNT
@@ -1438,7 +1516,7 @@ DSJ.LINKDESC
 DSJ.LINKSTAGE
 DSJ.INSTROWCOUNT
 DSJ.LINKEOTROWCOUNT
---DSGetLogEventIds-EventTypeFilter-Tokens--
+**DSGetLogEventIds-EventTypeFilter-Tokens**
 DSJ.LOGINFO.FILTER
 DSJ.LOGWARNING.FILTER
 DSJ.LOGFATAL.FILTER
@@ -1446,7 +1524,7 @@ DSJ.LOGREJECT.FILTER
 DSJ.LOGSTARTED.FILTER
 DSJ.LOGRESET.FILTER
 DSJ.LOGBATCH.FILTER
---DSGetLogSummary-EventType-Tokens--
+**DSGetLogSummary-EventType-Tokens**
 DSJ.LOGINFO
 DSJ.LOGWARNING
 DSJ.LOGFATAL
@@ -1456,7 +1534,7 @@ DSJ.LOGRESET
 DSJ.LOGBATCH
 DSJ.LOGOTHER
 DSJ.LOGANY
---DSGetParamInfo-InfoType-Tokens--
+**DSGetParamInfo-InfoType-Tokens**
 DSJ.PARAMDEFAULT
 DSJ.PARAMHELPTEXT
 DSJ.PARAMPROMPT
@@ -1466,7 +1544,7 @@ DSJ.PARAMDES.DEFAULT
 DSJ.PARAMLISTVALUES
 DSJ.PARAMDES.LISTVALUES
 DSJ.PARAMPROMPT.AT.RUN
---DSGetParamInfo-PARAMTYPE-Tokens--
+**DSGetParamInfo-PARAMTYPE-Tokens**
 DSJ.PARAMTYPE.STRING
 DSJ.PARAMTYPE.ENCRYPTED
 DSJ.PARAMTYPE.INTEGER
@@ -1475,20 +1553,20 @@ DSJ.PARAMTYPE.PATHNAME
 DSJ.PARAMTYPE.LIST
 DSJ.PARAMTYPE.DATE
 DSJ.PARAMTYPE.TIME
---DSGetProjectInfo-InfoType-Tokens--
+**DSGetProjectInfo-InfoType-Tokens**
 DSJ.JOBLIST
 DSJ.PROJECTNAME
 DSJ.HOSTNAME
 DSJ.INSTALLTAG
 DSJ.TCPPORT
 DSJ.PROJECTPATH
---DSGetVersionInfo-InfoType-Tokens--
+**DSGetVersionInfo-InfoType-Tokens**
 DSJ.VER.PRODREV
 DSJ.VER.CSREPOS
 DSJ.VER.CSJC
 DSJ.VER.RUNTIME
 DSJ.VER.ALL
---DSGetStageInfo-InfoType-Tokens--
+**DSGetStageInfo-InfoType-Tokens**
 DSJ.LINKLIST
 DSJ.STAGELASTERR
 DSJ.STAGENAME
@@ -1509,29 +1587,30 @@ DSJ.STAGEEOTTIMESTAMP
 DSJ.CUSTINFOLIST
 DSJ.STAGEEOTSTART
 DSJ.FQLINKLIST
+**DSGetVarInfo-InfoType-Tokens**
 DSJ.VARVALUE
 DSJ.VARDESC
---DSGetCustInfo-InfoType-Tokens--
+**DSGetCustInfo-InfoType-Tokens**
 DSJ.CUSTINFOVALUE
 DSJ.CUSTINFODESC
 DSJ.CUSTINFOPERINST
---DSRunJob-RunMode-Tokens-
+**DSRunJob-RunMode-Tokens**
 DSJ.RUNNORMAL
 DSJ.RUNRESET
 DSJ.RUNVALIDATE
 DSJ.RUNRESTART
---DSSetJobLimit-LimitType-Tokens
+**DSSetJobLimit-LimitType-Tokens**
 DSJ.LIMITWARN
 DSJ.LIMITROWS
---DSSetTraceOptions-TraceOptions-Tokens--
+**DSSetTraceOptions-TraceOptions-Tokens**
 DSJ.TRACE.DATA
 DSJ.TRACE.PINS
 DSJ.TRACE.CALLS
 DSJ.TRACE.STATS
---DSSetNotify-Options-Tokens--
+**DSSetNotify-Options-Tokens**
 DSNOTIFY.STATUS
 DSNOTIFY.EOT
---DSJE-Tokens--
+**DSJE-Tokens**
 DSJE.NOERROR
 DSJE.BADHANDLE
 DSJE.BADSTATE
@@ -1559,8 +1638,22 @@ DSJE.NONUNIQUEID
 DSJE.INVALIDID
 DSJE.REPERROR
 
+**DSA_COMMON.H-Ignored**
+**not-part-of-job-control**
 
-* @Variables / Constants - Keywords Lists -> 8th group
+**DSAPI_INTERNAL.H-Ignored**
+**not-part-of-job-control**
+
+**TxnIsolation**
+**BASIC-Reference-Page-90**
+NO.ISOLATION
+READ.UNCOMMITTED
+READ.COMMITTED
+REPEATABLE.READ
+SERIALIZABLE
+
+**@Variables**
+**BASIC-Reference-Page-447**
 @ABORT.CODE
 @ACCOUNT
 @AM
@@ -1648,3 +1741,6 @@ DSJE.REPERROR
 @VM
 @WHO
 @YEAR
+
+**Prefix-for-User-Defined-Functions**
+DSU.
