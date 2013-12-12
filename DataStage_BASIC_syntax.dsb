@@ -87,9 +87,11 @@ DSGetJobMetaBag
 DSGetLinkInfo
 DSGetLinkMetaData
 DSGetLogEntry
+DSGetLogEntryFull
 DSGetLogEventIds
 DSGetLogSummary
 DSGetNewestLogId
+DSGetQueueList
 DSGetParamInfo
 DSGetProjectInfo
 DSGetStageInfo
@@ -98,6 +100,7 @@ DSGetStagesOfType
 DSGetStagesTypes
 DSGetVarInfo
 DSGetVersionInfo
+DSGetWLMEnabled
 DSIPCPageProps
 DSLogEvent
 DSLogFatal
@@ -113,6 +116,7 @@ DSSetDisableJobHandler
 DSSetDisableProjectHandler
 DSSetGenerateOpMetaData
 DSSetJobLimit
+DSSetJobQueue
 DSSetParam
 DSSetUserStatus
 DSStopJob
@@ -1516,6 +1520,7 @@ DSJ.LINKDESC
 DSJ.LINKSTAGE
 DSJ.INSTROWCOUNT
 DSJ.LINKEOTROWCOUNT
+DSJ.LINKEXTROWCOUNT
 **DSGetLogEventIds-EventTypeFilter-Tokens**
 DSJ.LOGINFO.FILTER
 DSJ.LOGWARNING.FILTER
@@ -1637,6 +1642,9 @@ DSJE.BADVAR
 DSJE.NONUNIQUEID
 DSJE.INVALIDID
 DSJE.REPERROR
+DSJE.INVALIDQUEUE
+DSJE.WLMDISABLED
+DSJE.WLMNOTRUNNING
 
 **DSA_COMMON.H-Ignored**
 **not-part-of-job-control**
